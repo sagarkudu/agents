@@ -1,0 +1,12 @@
+chat-completion-vs-responses-api/backend/.env
+chat-completion-vs-responses-api/frontend/.env
+chat-completion-vs-responses-api/backend/node_modules
+chat-completion-vs-responses-api/frontend/node_modules
+
+open-swap/backend/.env
+open-swap/frontend/.env
+open-swap/frontend/node_modules
+open-swap/backend/node_modules
+
+.DS_Store
+.env
