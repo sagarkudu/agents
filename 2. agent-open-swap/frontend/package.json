@@ -1,0 +1,12 @@
+{
+  "name": "agents-ai-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0"
+  }
+}

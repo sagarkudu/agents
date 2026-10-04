@@ -1,0 +1,7 @@
+✓ AI_MODEL: gpt-5.4-nano
+✓ AI_URL: https://api.openai.com/v1
+Demo server running at http://localhost:3001
+
+=== Chat Completions ===
+
+Open-source tools matter because their source code is publicly available, so anyone can inspect, improve, and adapt them. This often leads to better transparency, faster innovation, and more reliable security, while also avoiding vendor lock-in by letting users choose how and where the software is used.

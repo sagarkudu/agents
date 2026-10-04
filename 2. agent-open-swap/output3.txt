@@ -1,0 +1,27 @@
+✓ AI_MODEL: gpt-5.4-nano
+✓ AI_URL: https://api.openai.com/v1
+Demo server running at http://localhost:3001
+
+=== Responses ===
+
+Open-source tools matter because their code is publicly available, so people can inspect, improve, and fix them. This often leads to faster innovation, better security through community review, and less vendor lock-in since users aren’t dependent on a single company’s proprietary software.
+
+=== Full output array ===
+
+[
+  {
+    "id": "msg_08ecbb6f1b445b99006aa945e029e887d2b6e4dd21f324cf25",
+    "type": "message",
+    "status": "completed",
+    "content": [
+      {
+        "type": "output_text",
+        "annotations": [],
+        "logprobs": [],
+        "text": "Open-source tools matter because their code is publicly available, so people can inspect, improve, and fix them. This often leads to faster innovation, better security through community review, and less vendor lock-in since users aren’t dependent on a single company’s proprietary software."
+      }
+    ],
+    "phase": "final_answer",
+    "role": "assistant"
+  }
+]

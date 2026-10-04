@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agents AI</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">AI</div>
+        <div>
+          <h1>Agents AI</h1>
+          <p>Frontend → Backend → OpenAI</p>
+        </div>
+      </div>
+      <div id="health" class="status">Checking backend...</div>
+    </header>
+
+    <section class="card">
+      <label for="prompt">Prompt</label>
+      <textarea id="prompt" rows="5">Give me a short explanation of why open-source tools matter.</textarea>
+
+      <div class="actions">
+        <button id="run-chat-completions" type="button">Run Chat Completions</button>
+        <button id="run-responses" type="button">Run Responses API</button>
+      </div>
+
+      <div class="result-header">
+        <h2>Response</h2>
+        <button id="clear" class="secondary" type="button">Clear</button>
+      </div>
+      <pre id="result" class="result">Your AI response will appear here.</pre>
+      <p id="error" class="error" role="alert"></p>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>
