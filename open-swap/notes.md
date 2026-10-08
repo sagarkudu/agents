@@ -78,9 +78,11 @@ Building it this way helps us to avoid this problem where we stuff all the conte
 Functions are declared in the **tools** parameter of each API request.
 You declare them as objects with the following keys.
 
-type -> This should always be function.
-name -> The function's name (e.g get_open_source_news)
-description -> A string that describes what the function does and when to use it.
+Here we are declaring **tools** in the `responses` api followed by `type`, `name` and `description`
+
+> type -> This should always be function.
+> name -> The function's name (e.g get_open_source_news)
+> description -> A string that describes what the function does and when to use it.
 
 Define Tools and pass in the model's call
 
@@ -94,6 +96,8 @@ Use the get_open_source_news tool before recommending software in case recent ne
 
 const userPrompt = "I want to replace Calendly for our team. We need SSO authentication and source code access.";
 ```
+
+Defining tools in **responses** api followed by `type`, `name` and `description`
 
 ```
 const tools = [
@@ -135,22 +139,22 @@ Full output array: [
 ]
 ```
 
-Tools Calls
+### How AI Conversation History Works?xx`
 
 The function call is the model saying, hey app, I need you to run this tool before I answer. So on the next turn the input has to include the function calls associated output.
 
 In input we have earlier we System Prompt > user message
 Now after accumulating tool calling System Prompt > tool description > user message.
 
-Turn 1:
-Input: System Prompt > tool description > user message.
-Output: function_call 1 (not shown to user)
+Turn 1: In turn 1, the input includes tool description as well and final output is not shown to the user because it is not a final answer yet. It is request for a function to be called.
+> Input: System Prompt > tool description > user message.
+Output: function_call 1 (not shown to user and passed to turn 2) 
 
-Turn 2:
-Input: System Prompt > tool description > user message > function_call 1 > function_call_output 1
+Turn 2: In turn 2, input hast to include that function call 1 with associated output 1, this is result for tool calling just requested. 
+> Input: System Prompt > tool description > user message > function_call 1 > function_call_output 1
 Output: function_call 2 (not shown to user)
 
-Turn 3:
+Turn 3: model keeps requesting tools, and our app keeps giving output until the model is finally ready to respond. 
 Input: System Prompt > tool description > user message > function_call 1 > function_call_output 1 > function_call 2 > function_call_output 2
 Output: assistant message 1
 

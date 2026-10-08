@@ -1,0 +1,722 @@
+[
+  {
+    "title": "Parrot Security 7.2 launches with Linux kernel 6.19, Copy Fail patch, and updated packages",
+    "details": "Parrot Security 7.2 launches with Linux kernel 6.19, Copy Fail patch, and updated packages. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-05-11"
+  },
+  {
+    "title": "Grav 2.0 RC launches with new admin UI, REST API, refreshed default theme, and MCP server",
+    "details": "Grav 2.0 RC launches with new admin UI, REST API, refreshed default theme, and MCP server. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-05-10"
+  },
+  {
+    "title": "Simplenote MCP server adds Windows and Linux support with write features",
+    "details": "Simplenote MCP server adds Windows and Linux support with write features. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-05-08"
+  },
+  {
+    "title": "Visual Studio Code 1.119 improves agent-browser integration and tracking",
+    "details": "Visual Studio Code 1.119 improves agent-browser integration and tracking. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-05-06"
+  },
+  {
+    "title": "Warp goes open-source for easier agentic development and introduces broader model support",
+    "details": "Warp goes open-source for easier agentic development and introduces broader model support. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-04-28"
+  },
+  {
+    "title": "Kimi K2.6 released with long-horizon execution, agent swarms, and full-stack AI coding",
+    "details": "Kimi K2.6 released with long-horizon execution, agent swarms, and full-stack AI coding. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-04-20"
+  },
+  {
+    "title": "Gitea 1.26 adds subpath archive download, OpenAPI rendering, Vite support & security fixes",
+    "details": "Gitea 1.26 adds subpath archive download, OpenAPI rendering, Vite support & security fixes. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Darth Maintainer",
+    "date": "2026-04-19"
+  },
+  {
+    "title": "Mozilla unveils Thunderbolt, an open-source AI client for private, self-hosted workflows",
+    "details": "Mozilla unveils Thunderbolt, an open-source AI client for private, self-hosted workflows. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-04-16"
+  },
+  {
+    "title": "Cal.com moves commercial codebase closed source and launches MIT-licensed Cal.diy",
+    "details": "Cal.com says it is moving its commercial codebase closed source because AI-driven attacks make public code easier to scan for vulnerabilities. The company also launched Cal.diy, a stripped-down MIT-licensed open-source version for hobbyists and developers. For teams replacing Calendly, this creates an edition-boundary question: Cal.diy gives source access, while Cal.com's commercial/enterprise path is where team scheduling, routing/workflows, and SAML SSO need verification.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-04-14"
+  },
+  {
+    "title": "Visual Studio Code 1.115 adds Agents app and major agent tools upgrades",
+    "details": "Visual Studio Code 1.115 adds Agents app and major agent tools upgrades. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-04-09"
+  },
+  {
+    "title": "Zed Editor launches Agent Metrics, offering public AI agent usage data",
+    "details": "Zed Editor launches Agent Metrics, offering public AI agent usage data. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-04-09"
+  },
+  {
+    "title": "Visual Studio Code 1.114 adds video in carousel, semantic code search, and TypeScript 6.0",
+    "details": "Visual Studio Code 1.114 adds video in carousel, semantic code search, and TypeScript 6.0. The story is relevant to frontend or language tooling, where recent releases can quickly change recommendations.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-04-03"
+  },
+  {
+    "title": "Opera Neon launches built-in MCP server to let external AI agents control your web browser",
+    "details": "Opera Neon launches built-in MCP server to let external AI agents control your web browser. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-03-30"
+  },
+  {
+    "title": "OpenAI introduces plugin support in Codex with app integrations, skills, and MCP servers",
+    "details": "OpenAI introduces plugin support in Codex with app integrations, skills, and MCP servers. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-03-29"
+  },
+  {
+    "title": "Matrix 1.18 adds policy servers, invite blocking and safety API updates",
+    "details": "Matrix 1.18 adds policy servers, invite blocking and safety API updates. The change affects developer workflows, infrastructure, or self-hosted software operations.",
+    "author": "Darth Maintainer",
+    "date": "2026-03-26"
+  },
+  {
+    "title": "Mullvad Browser Alpha adopts Firefox Rapid Release and adds Linux ARM support",
+    "details": "Mullvad Browser Alpha adopts Firefox Rapid Release and adds Linux ARM support. The change affects developer workflows, infrastructure, or self-hosted software operations.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-03-25"
+  },
+  {
+    "title": "Storybook MCP arrives for React with AI agent integration",
+    "details": "Storybook MCP arrives for React with AI agent integration. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-03-25"
+  },
+  {
+    "title": "Unsloth Studio launches open-source no-code UI for local AI model training",
+    "details": "Unsloth Studio launches open-source no-code UI for local AI model training. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-03-17"
+  },
+  {
+    "title": "Cal.com agents launch, custom domain support, and new scheduling controls",
+    "details": "Cal.com agents launch, custom domain support, and new scheduling controls. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-03-15"
+  },
+  {
+    "title": "SparkyLinux 2026.03 released with Debian Forky base and updated kernel",
+    "details": "SparkyLinux 2026.03 released with Debian Forky base and updated kernel. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-03-15"
+  },
+  {
+    "title": "BookStack 26.03: new theme module system & enhanced API for developers",
+    "details": "BookStack 26.03: new theme module system & enhanced API for developers. The change affects developer workflows, infrastructure, or self-hosted software operations.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-03-15"
+  },
+  {
+    "title": "OpenAI's AI coding app Codex launches on Windows with multi-agent management & sandboxing",
+    "details": "OpenAI's AI coding app Codex launches on Windows with multi-agent management & sandboxing. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-03-04"
+  },
+  {
+    "title": "Tails 7.5 brings enhanced Thunderbird security, updated Tor browser & client, and more",
+    "details": "Tails 7.5 brings enhanced Thunderbird security, updated Tor browser & client, and more. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Darth Maintainer",
+    "date": "2026-02-26"
+  },
+  {
+    "title": "Thunderbird 148.0 boosts mail reliability, accessibility, and security",
+    "details": "Thunderbird 148.0 boosts mail reliability, accessibility, and security. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-02-25"
+  },
+  {
+    "title": "Firefox 148 has been released and finally introduces an AI controls panel for its AI tools",
+    "details": "Firefox 148 has been released and finally introduces an AI controls panel for its AI tools. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-02-24"
+  },
+  {
+    "title": "Ladybird web browser begins Rust adoption, starting with JavaScript engine, with AI help",
+    "details": "Ladybird web browser begins Rust adoption, starting with JavaScript engine, with AI help. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-02-22"
+  },
+  {
+    "title": "GitLab 18.9 introduces Duo Agent general availability, vulnerability resolution, and more",
+    "details": "GitLab 18.9 introduces Duo Agent general availability, vulnerability resolution, and more. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Darth Maintainer",
+    "date": "2026-02-19"
+  },
+  {
+    "title": "GitHub Copilot now available in Zed for all paid subscribers",
+    "details": "GitHub Copilot now available in Zed for all paid subscribers. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-02-19"
+  },
+  {
+    "title": "Nextcloud Hub 26 Winter adds migration tools, browser encryption, and Office updates",
+    "details": "Nextcloud Hub 26 Winter adds migration tools, browser encryption, and Office updates. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-02-19"
+  },
+  {
+    "title": "Cal.com 6.2: improved calendar view & custom meeting locations for teams",
+    "details": "Cal.com 6.2: improved calendar view & custom meeting locations for teams. A concise software update from the developer ecosystem.",
+    "author": "Leia Libre",
+    "date": "2026-02-15"
+  },
+  {
+    "title": "OpenAI introduces GPT\u20115.3\u2011Codex\u2011Spark for real-time coding with 128k context window",
+    "details": "OpenAI introduces GPT\u20115.3\u2011Codex\u2011Spark for real-time coding with 128k context window. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-02-13"
+  },
+  {
+    "title": "Parrot OS 7.1 brings Linux 6.17 kernel, new Enlightenment spin, MCPwn AI tool, and more",
+    "details": "Parrot OS 7.1 brings Linux 6.17 kernel, new Enlightenment spin, MCPwn AI tool, and more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-02-12"
+  },
+  {
+    "title": "MiniMax releases m2.5, an open-source model with SOTA coding and faster execution",
+    "details": "MiniMax releases m2.5, an open-source model with SOTA coding and faster execution. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-02-12"
+  },
+  {
+    "title": "OpenVPN 2.7 adds multi-socket servers, DCO Linux kernel module, and enhanced DNS support",
+    "details": "OpenVPN 2.7 adds multi-socket servers, DCO Linux kernel module, and enhanced DNS support. The change affects developer workflows, infrastructure, or self-hosted software operations.",
+    "author": "Leia Libre",
+    "date": "2026-02-12"
+  },
+  {
+    "title": "Brave updates its Search API with a new LLM context endpoint for AI and new pricing",
+    "details": "Brave updates its Search API with a new LLM context endpoint for AI and new pricing. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-02-12"
+  },
+  {
+    "title": "Google launches Developer Knowledge API and MCP server for direct documentation access",
+    "details": "Google launches Developer Knowledge API and MCP server for direct documentation access. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-02-08"
+  },
+  {
+    "title": "Alibaba unveils Qwen3-Coder-Next AI model for coding agents and local development tasks",
+    "details": "Alibaba unveils Qwen3-Coder-Next AI model for coding agents and local development tasks. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-02-05"
+  },
+  {
+    "title": "Visual Studio Code 1.109 releases chat UX overhaul and advanced agent controls",
+    "details": "Visual Studio Code 1.109 releases chat UX overhaul and advanced agent controls. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2026-02-04"
+  },
+  {
+    "title": "Xcode 26.3 adds agentic coding with Claude Agent, Codex, and other AI tools via MCP",
+    "details": "Xcode 26.3 adds agentic coding with Claude Agent, Codex, and other AI tools via MCP. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-02-03"
+  },
+  {
+    "title": "Mozilla releases official Firefox Nightly .rpm package for Linux",
+    "details": "Mozilla releases official Firefox Nightly .rpm package for Linux. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Luke Sourcewalker",
+    "date": "2026-01-19"
+  },
+  {
+    "title": "Cal.com launches Companion apps and browser extensions for scheduling",
+    "details": "Cal.com launches Companion apps and browser extensions for scheduling. A concise software update from the developer ecosystem.",
+    "author": "Obi-Wan Openobi",
+    "date": "2026-01-15"
+  },
+  {
+    "title": "GitLab 18.8 makes Duo Platform, Duo Planner, and Duo Security Analyst generally available",
+    "details": "GitLab 18.8 makes Duo Platform, Duo Planner, and Duo Security Analyst generally available. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2026-01-15"
+  },
+  {
+    "title": "ReactOS syncs MSVCRT with Wine 10.0, cuts API test failures by 30%",
+    "details": "ReactOS syncs MSVCRT with Wine 10.0, cuts API test failures by 30%. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2026-01-01"
+  },
+  {
+    "title": "GitLab 18.7 release brings secret validity checks and AI-powered SAST detection",
+    "details": "GitLab 18.7 release brings secret validity checks and AI-powered SAST detection. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-12-18"
+  },
+  {
+    "title": "Gemini 3 Flash launches in CLI with lower cost and top agentic coding scores",
+    "details": "Gemini 3 Flash launches in CLI with lower cost and top agentic coding scores. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-12-17"
+  },
+  {
+    "title": "Visual Studio Code 1.107 brings Agent HQ, terminal suggest, org custom agents, and more",
+    "details": "Visual Studio Code 1.107 brings Agent HQ, terminal suggest, org custom agents, and more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-12-10"
+  },
+  {
+    "title": "Mistral AI releases Devstral 2 model and Vibe CLI for terminal code automation",
+    "details": "Mistral AI releases Devstral 2 model and Vibe CLI for terminal code automation. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-12-09"
+  },
+  {
+    "title": "Critical RSC vulnerability in React and Next.js exposes servers to remote code execution",
+    "details": "Critical RSC vulnerability in React and Next.js exposes servers to remote code execution. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-12-07"
+  },
+  {
+    "title": "Rocky Linux 9.7 released with updated images and post-quantum security",
+    "details": "Rocky Linux 9.7 released with updated images and post-quantum security. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-12-01"
+  },
+  {
+    "title": "Linux kernel 6.18 released with BPF security, SLUB, and networking upgrades",
+    "details": "Linux kernel 6.18 released with BPF security, SLUB, and networking upgrades. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2025-11-30"
+  },
+  {
+    "title": "Oracle Linux 9.7 released with post-quantum cryptography and updated toolchain",
+    "details": "Oracle Linux 9.7 released with post-quantum cryptography and updated toolchain. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-11-30"
+  },
+  {
+    "title": "GitLab 18.6 adds redesigned UI, exact code search, new CI/CD capabilities, and much more",
+    "details": "GitLab 18.6 adds redesigned UI, exact code search, new CI/CD capabilities, and much more. A concise software update from the developer ecosystem.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-11-20"
+  },
+  {
+    "title": "Warp launches Agents 3.0 with full terminal use, code review, planning & new integrations",
+    "details": "Warp launches Agents 3.0 with full terminal use, code review, planning & new integrations. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-11-19"
+  },
+  {
+    "title": "Moonshot AI releases Kimi K2 Thinking, an open-source agent model for complex reasoning",
+    "details": "Moonshot AI releases Kimi K2 Thinking, an open-source agent model for complex reasoning. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-11-06"
+  },
+  {
+    "title": "Zed Editor introduces one-click agent extensions for ACP integration",
+    "details": "Zed Editor introduces one-click agent extensions for ACP integration. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-11-06"
+  },
+  {
+    "title": "GitHub unveils Agent HQ, a central hub for AI coding agents from top providers",
+    "details": "GitHub unveils Agent HQ, a central hub for AI coding agents from top providers. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-10-28"
+  },
+  {
+    "title": "Tor Browser 15.0 introduces vertical tabs and enhanced security, based on Firefox 140 ESR",
+    "details": "Tor Browser 15.0 introduces vertical tabs and enhanced security, based on Firefox 140 ESR. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-10-28"
+  },
+  {
+    "title": "Pi-hole 6.2 released with security upgrades, Alpine Linux support, and DNS enhancements",
+    "details": "Pi-hole 6.2 released with security upgrades, Alpine Linux support, and DNS enhancements. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2025-10-26"
+  },
+  {
+    "title": "Browser rendering engine Servo launches first official 0.0.1 release on GitHub",
+    "details": "Browser rendering engine Servo launches first official 0.0.1 release on GitHub. A concise software update from the developer ecosystem.",
+    "author": "Darth Maintainer",
+    "date": "2025-10-20"
+  },
+  {
+    "title": "Clonezilla Live 3.3 has been released with Linux 6.16 Kernel, Alias Devices & eMMC Support",
+    "details": "Clonezilla Live 3.3 has been released with Linux 6.16 Kernel, Alias Devices & eMMC Support. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-10-20"
+  },
+  {
+    "title": "Zed Editor integrates OpenAI Codex via ACP and open-sources adapter",
+    "details": "Zed Editor integrates OpenAI Codex via ACP and open-sources adapter. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-10-17"
+  },
+  {
+    "title": "GitLab 18.5 released with Duo Planner Agent, Duo Security Analyst Agent, and much more",
+    "details": "GitLab 18.5 released with Duo Planner Agent, Duo Security Analyst Agent, and much more. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2025-10-16"
+  },
+  {
+    "title": "TrailBase 0.19 debuts WASM-only runtime, index file API changes, and new Kotlin client",
+    "details": "TrailBase 0.19 debuts WASM-only runtime, index file API changes, and new Kotlin client. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-10-09"
+  },
+  {
+    "title": "Ubuntu 25.10 launches with GNOME 49, Linux kernel 6.17, TPM-backed encryption and more",
+    "details": "Ubuntu 25.10 launches with GNOME 49, Linux kernel 6.17, TPM-backed encryption and more. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-10-08"
+  },
+  {
+    "title": "JetBrains will collaborate with Zed to bring the Agent Client Protocol (ACP) to their IDEs",
+    "details": "JetBrains will collaborate with Zed to bring the Agent Client Protocol (ACP) to their IDEs. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-10-06"
+  },
+  {
+    "title": "AI coding agent Google launches Jules Tools CLI for direct terminal access & public API",
+    "details": "AI coding agent Google launches Jules Tools CLI for direct terminal access & public API. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-10-03"
+  },
+  {
+    "title": "Linux 6.17 has been released with Intel/AMD laptop gains, storage boosts & lower latency",
+    "details": "Linux 6.17 has been released with Intel/AMD laptop gains, storage boosts & lower latency. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-09-28"
+  },
+  {
+    "title": "Ollama launches web search API to boost AI model accuracy and reduce hallucinations",
+    "details": "Ollama launches web search API to boost AI model accuracy and reduce hallucinations. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-09-26"
+  },
+  {
+    "title": "OpenAI GPT-5-Codex launches in public preview for GitHub Copilot users",
+    "details": "OpenAI GPT-5-Codex launches in public preview for GitHub Copilot users. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-09-24"
+  },
+  {
+    "title": "Google AI Pro adds Gemini CLI and Code Assist with higher usage limits",
+    "details": "Google AI Pro adds Gemini CLI and Code Assist with higher usage limits. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-09-24"
+  },
+  {
+    "title": "Laravel MCP beta released for public, enabling AI client integration",
+    "details": "Laravel MCP beta released for public, enabling AI client integration. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-09-18"
+  },
+  {
+    "title": "GitLab 18.4 released with GitLab Duo model selection, knowledge graph & other enhancements",
+    "details": "GitLab 18.4 released with GitLab Duo model selection, knowledge graph & other enhancements. A concise software update from the developer ecosystem.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-09-18"
+  },
+  {
+    "title": "CodeRabbit launches CLI tool for automated AI code reviews on MacOS and Linux",
+    "details": "CodeRabbit launches CLI tool for automated AI code reviews on MacOS and Linux. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-09-17"
+  },
+  {
+    "title": "GitHub launches MCP Registry for easy discovery and installation of MCP servers",
+    "details": "GitHub launches MCP Registry for easy discovery and installation of MCP servers. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-09-17"
+  },
+  {
+    "title": "Teable 2.0 introduces AI-powered database agent and natural language automation",
+    "details": "Teable 2.0 introduces AI-powered database agent and natural language automation. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-09-17"
+  },
+  {
+    "title": "Fedora Linux 43 Beta released with kernel 6.17, GNOME 49, KDE 6.4, and updated toolchains",
+    "details": "Fedora Linux 43 Beta released with kernel 6.17, GNOME 49, KDE 6.4, and updated toolchains. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-09-16"
+  },
+  {
+    "title": "OpenAI releases new GPT-5-Codex model for autonomous coding and large-scale refactoring",
+    "details": "OpenAI releases new GPT-5-Codex model for autonomous coding and large-scale refactoring. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-09-15"
+  },
+  {
+    "title": "GitHub introduces hybrid post-quantum SSH security to better protect Git data in transit",
+    "details": "GitHub introduces hybrid post-quantum SSH security to better protect Git data in transit. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2025-09-15"
+  },
+  {
+    "title": "Mozilla extends Firefox support for Windows 7/8 once again and ends 32-bit Linux builds",
+    "details": "Mozilla extends Firefox support for Windows 7/8 once again and ends 32-bit Linux builds. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-09-07"
+  },
+  {
+    "title": "Raycast launches GitHub Copilot extension for in-app coding agent tasks",
+    "details": "Raycast launches GitHub Copilot extension for in-app coding agent tasks. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-08-28"
+  },
+  {
+    "title": "Zed introduces third-party AI agent support with Agent Client Protocol through Gemini CLI",
+    "details": "Zed introduces third-party AI agent support with Agent Client Protocol through Gemini CLI. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-08-27"
+  },
+  {
+    "title": "Tails 6.19 updates Tor Browser and Tor client with key fixes",
+    "details": "Tails 6.19 updates Tor Browser and Tor client with key fixes. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-08-21"
+  },
+  {
+    "title": "GitLab 18.3 launches with Duo Agent Platform in Visual Studio, embedded views, and more",
+    "details": "GitLab 18.3 launches with Duo Agent Platform in Visual Studio, embedded views, and more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-08-21"
+  },
+  {
+    "title": "Shopify unveils agentic commerce APIs for AI-driven shopping in conversational apps",
+    "details": "Shopify unveils agentic commerce APIs for AI-driven shopping in conversational apps. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-08-11"
+  },
+  {
+    "title": "Debian 13 Trixie released with Linux kernel 6.12 LTS, GNOME 48, KDE 6.3, and more",
+    "details": "Debian 13 Trixie released with Linux kernel 6.12 LTS, GNOME 48, KDE 6.3, and more. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-08-10"
+  },
+  {
+    "title": "Tails 6.18 released with WebTunnel bridges and updated Tor Browser & Thunderbird",
+    "details": "Tails 6.18 released with WebTunnel bridges and updated Tor Browser & Thunderbird. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-07-25"
+  },
+  {
+    "title": "Google launches OSS Rebuild to boost trust in open source package security",
+    "details": "Google launches OSS Rebuild to boost trust in open source package security. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Darth Maintainer",
+    "date": "2025-07-23"
+  },
+  {
+    "title": "Alibaba introduces Qwen3-Coder, its most powerful agentic and AI coding model",
+    "details": "Alibaba introduces Qwen3-Coder, its most powerful agentic and AI coding model. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-07-22"
+  },
+  {
+    "title": "Firefox 141 adds AI tab grouping, unit conversion in address bar, and Linux memory gains",
+    "details": "Firefox 141 adds AI tab grouping, unit conversion in address bar, and Linux memory gains. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-07-21"
+  },
+  {
+    "title": "GitHub Copilot Coding Agent brings multi-agent automation to Visual Studio Code",
+    "details": "GitHub Copilot Coding Agent brings multi-agent automation to Visual Studio Code. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-07-17"
+  },
+  {
+    "title": "GitLab 18.2 adds Duo Agent Platform in the IDE, custom workflow statuses for issues & more",
+    "details": "GitLab 18.2 adds Duo Agent Platform in the IDE, custom workflow statuses for issues & more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-07-17"
+  },
+  {
+    "title": "Open source email client Mailspring 1.16 brings Thunderbird-style autoconfiguration & more",
+    "details": "Open source email client Mailspring 1.16 brings Thunderbird-style autoconfiguration & more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-07-16"
+  },
+  {
+    "title": "Sparky 7.8 released with Linux kernel 6.1 LTS and updated software & desktop environments",
+    "details": "Sparky 7.8 released with Linux kernel 6.1 LTS and updated software & desktop environments. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-07-15"
+  },
+  {
+    "title": "GitHub Copilot coding agent introduces UI test automation and dashboard features",
+    "details": "GitHub Copilot coding agent introduces UI test automation and dashboard features. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-07-14"
+  },
+  {
+    "title": "Amazon launches Kiro, a new specs-driven IDE for vibe coding with built-in AI agents",
+    "details": "Amazon launches Kiro, a new specs-driven IDE for vibe coding with built-in AI agents. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-07-13"
+  },
+  {
+    "title": "Kimi K2 open-source agentic model released with 1T MoE architecture",
+    "details": "Kimi K2 open-source agentic model released with 1T MoE architecture. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-07-13"
+  },
+  {
+    "title": "Bitwarden unveils MCP server for secure and local AI access to your credentials",
+    "details": "Bitwarden unveils MCP server for secure and local AI access to your credentials. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-07-10"
+  },
+  {
+    "title": "Parrot OS 6.4 released with updated tools, Linux 6.12 kernel, and .NET support",
+    "details": "Parrot OS 6.4 released with updated tools, Linux 6.12 kernel, and .NET support. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Leia Libre",
+    "date": "2025-07-06"
+  },
+  {
+    "title": "Thunderbird 140 released with \u201cMark as Spam\u201d & \u201cMark as Starred\u201d mail notification actions",
+    "details": "Thunderbird 140 released with \u201cMark as Spam\u201d & \u201cMark as Starred\u201d mail notification actions. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-07-06"
+  },
+  {
+    "title": "Git client Tower 9.1 for Windows adds Gitea support, Gitmoji integration and other updates",
+    "details": "Git client Tower 9.1 for Windows adds Gitea support, Gitmoji integration and other updates. The change affects developer workflows, infrastructure, or self-hosted software operations.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-07-02"
+  },
+  {
+    "title": "Cursor launches web-based AI coding platform with mobile and multi-agent support",
+    "details": "Cursor launches web-based AI coding platform with mobile and multi-agent support. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-07-01"
+  },
+  {
+    "title": "Mastodon 4.4 RC for developers adds quote post support, feature flags & security updates",
+    "details": "Mastodon 4.4 RC for developers adds quote post support, feature flags & security updates. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2025-06-30"
+  },
+  {
+    "title": "Super Productivity 14 released with support for plugins, enhanced calendar view, and more",
+    "details": "Super Productivity 14 released with support for plugins, enhanced calendar view, and more. A concise software update from the developer ecosystem.",
+    "author": "Darth Maintainer",
+    "date": "2025-06-29"
+  },
+  {
+    "title": "Rust 1.88 released with Let statements chaining, naked functions, and Cargo cache cleaning",
+    "details": "Rust 1.88 released with Let statements chaining, naked functions, and Cargo cache cleaning. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-06-26"
+  },
+  {
+    "title": "GitLab 18.1 released with Maven virtual registry in beta, Duo Code Review, and more",
+    "details": "GitLab 18.1 released with Maven virtual registry in beta, Duo Code Review, and more. A concise software update from the developer ecosystem.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-06-19"
+  },
+  {
+    "title": "ClickUp introduces Autopilot Agents for automated AI reports and standups",
+    "details": "ClickUp introduces Autopilot Agents for automated AI reports and standups. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-06-19"
+  },
+  {
+    "title": "Warp Log 3 adds AI agent improvements and image context support for terminal users",
+    "details": "Warp Log 3 adds AI agent improvements and image context support for terminal users. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-06-04"
+  },
+  {
+    "title": "Figma launches Dev Mode MCP server for direct AI access to design data",
+    "details": "Figma launches Dev Mode MCP server for direct AI access to design data. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-06-03"
+  },
+  {
+    "title": "Opera launches Neon, an agentic browser with AI chat and automation tools built-in",
+    "details": "Opera launches Neon, an agentic browser with AI chat and automation tools built-in. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-05-27"
+  },
+  {
+    "title": "Mistral AI unveils Agents API with orchestration, context tracking & integration features",
+    "details": "Mistral AI unveils Agents API with orchestration, context tracking & integration features. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-05-26"
+  },
+  {
+    "title": "Mistral AI launches Devstral, a powerful open source LLM for coding and engineering tasks",
+    "details": "Mistral AI launches Devstral, a powerful open source LLM for coding and engineering tasks. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-05-21"
+  },
+  {
+    "title": "OpenAI's latest advanced image generation model is now available through developers API",
+    "details": "OpenAI's latest advanced image generation model is now available through developers API. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-04-22"
+  },
+  {
+    "title": "GitLab 17.11 adds Custom Compliance Frameworks, new Duo AI features, and more",
+    "details": "GitLab 17.11 adds Custom Compliance Frameworks, new Duo AI features, and more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-04-16"
+  },
+  {
+    "title": "GitHub launches security campaigns with tools like Copilot Autofix to reduce security debt",
+    "details": "GitHub launches security campaigns with tools like Copilot Autofix to reduce security debt. The update highlights a security-sensitive change that developers and maintainers would want surfaced quickly.",
+    "author": "Leia Libre",
+    "date": "2025-04-09"
+  },
+  {
+    "title": "GitHub launches Copilot Pro+ with GPT-4.5, MCP Server, agent mode in VS Code, and more",
+    "details": "GitHub launches Copilot Pro+ with GPT-4.5, MCP Server, agent mode in VS Code, and more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-04-06"
+  },
+  {
+    "title": "Visual Studio Code 1.98 brings GitHub Copilot enhancements, Linux custom title bar, & more",
+    "details": "Visual Studio Code 1.98 brings GitHub Copilot enhancements, Linux custom title bar, & more. This belongs in the feed as ecosystem news around Linux, packaging, hardware support, or maintainability.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-03-05"
+  },
+  {
+    "title": "Nextcloud Hub 10 Launches with a new open-source AI agent, improved file management & more",
+    "details": "Nextcloud Hub 10 Launches with a new open-source AI agent, improved file management & more. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Obi-Wan Openobi",
+    "date": "2025-02-24"
+  },
+  {
+    "title": "GitHub Copilot agent mode available to VS Code Insiders users",
+    "details": "GitHub Copilot agent mode available to VS Code Insiders users. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Leia Libre",
+    "date": "2025-02-24"
+  },
+  {
+    "title": "GitHub Copilot gets major updates: Agent Mode & Copilot Edits for smarter code assistance",
+    "details": "GitHub Copilot gets major updates: Agent Mode & Copilot Edits for smarter code assistance. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Darth Maintainer",
+    "date": "2025-02-05"
+  },
+  {
+    "title": "Google have released the source code to PebbleOS, and is now available on GitHub",
+    "details": "Google have released the source code to PebbleOS, and is now available on GitHub. The story points to the fast-moving agent and AI tooling layer around modern software work.",
+    "author": "Luke Sourcewalker",
+    "date": "2025-01-27"
+  }
+]
