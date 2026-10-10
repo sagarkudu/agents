@@ -164,10 +164,111 @@ We will keep building Agent Loop that can handle functions calls and produce a f
 
 #### The Agent Loop (Simplified)
 
-Context ➡️ Send Request ➡️ Tool Call Required ➡️ No ➡️ Responsd to User
-⬇️
-Yes
-⬇️
-Add Tool Result
-⬇️
-Context
+> Context ➡️ Send Request ➡️ Tool Call Required ➡️ No ➡️ Responsd to User
+                                  ⬇️
+                                  Yes
+                                  ⬇️
+                                  Add Tool Result
+                                  ⬇️
+                                  Context
+
+```
+const systemPrompt = `You are OpenSwap, an AI assistant that helps users find open-source alternatives to popular software.
+
+Use the get_open_source_news tool before recommending software in case recent news would change your answer.`;
+
+const tools = [
+  {
+    type: "function",
+    name: "get_open_source_news",
+    description:
+      "Retrieve recent news about open-source software. Use this before recommending software, in case recent news would change your answer.",
+  },
+];
+
+const userPrompt =
+  "I want to replace Calendly for our team. We need SSO authentication and source code access.";
+
+async function getOpenSourceNews() {
+  const rawNews = await readFile(
+    new URL("./news.json", import.meta.url),
+    "utf8",
+  );
+  return JSON.parse(rawNews);
+}
+
+async function runAgent() {
+  // Keep a running input context array so later turns can see earlier output.
+  const inputContext = [{ role: "user", content: userPrompt }];
+  const maxTurns = 1;
+
+  let turnCount = 0;
+
+  while (turnCount < maxTurns) {
+    turnCount++;
+    console.log(`Turn ${turnCount}`);
+
+    const turnResponse = await openai.responses.create({
+      model: process.env.AI_MODEL,
+      instructions: systemPrompt,
+      input: inputContext,
+      tools,
+    });
+
+    const latestOutputItem = turnResponse.output.at(-1);
+
+    if (latestOutputItem?.type === "message") {
+      console.log(
+        turnResponse.output_text || "Something went wrong. Please try again.",
+      );
+      return;
+    }
+
+    if (latestOutputItem?.type === "function_call") {
+      console.log("Tool call requested:", latestOutputItem.name);
+
+      if (latestOutputItem.name === "get_open_source_news") {
+        const openSourceNews = await getOpenSourceNews();
+        console.log(openSourceNews);
+        console.log(
+          `get_open_source_news returned ${openSourceNews.length} items`,
+        );
+      }
+      continue;
+    }
+  }
+
+  console.log("\nMax turns reached before the model returned a final answer.");
+}
+
+// Run the agent when the frontend calls this backend route.
+app.post("/api/agent", async (_req, res) => {
+  try {
+    await runAgent();
+    res.json({ status: "ok" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      status: "error",
+      message: "Something went wrong. Please try again.",
+    });
+  }
+});
+```                                 
+
+### Returning Tool Result 
+
+The model has requested a tool and our app can run it. But the next model turn still needs the request and its result.
+
+1. Push the original function_call into inputContext.
+2. Push a function_call_output object into inputContext with:
+    - type: "function_call_output"
+    - call_id: the same call_id from latestOutputItem
+    - output: the result as a JSON string with JSON.stringify
+
+Shape of a function_call_output:
+- A tool result back to the Responses API is an object that connects the output back to the original request using these keys:
+
+> type: `function_call_output`
+call_id: Connects the result to the exact `function_call` the model made.
+output: The actual data returned by the local function must a `string` 

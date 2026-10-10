@@ -56,7 +56,7 @@ async function getOpenSourceNews() {
 async function runAgent() {
   // Keep a running input context array so later turns can see earlier output.
   const inputContext = [{ role: "user", content: userPrompt }];
-  const maxTurns = 1;
+  const maxTurns = 5;
 
   let turnCount = 0;
 
@@ -64,34 +64,69 @@ async function runAgent() {
     turnCount++;
     console.log(`Turn ${turnCount}`);
 
-    const turnResponse = await openai.responses.create({
-      model: process.env.AI_MODEL,
-      instructions: systemPrompt,
-      input: inputContext,
-      tools,
-    });
+      const turnResponse = await openai.responses.create({
+        model: process.env.AI_MODEL,
+        instructions: systemPrompt,
+        input: inputContext,
+        tools,
+      });
+
+      // Push the original function_call into inputContext.
+      inputContext.push(...turnResponse.output);
 
     const latestOutputItem = turnResponse.output.at(-1);
 
     if (latestOutputItem?.type === "message") {
       console.log(
-        turnResponse.output_text || "Something went wrong. Please try again.",
+        "\n" +
+          (turnResponse.output_text ||
+            "Something went wrong. Please try again."),
       );
       return;
     }
 
     if (latestOutputItem?.type === "function_call") {
       console.log("Tool call requested:", latestOutputItem.name);
+      console.log("Call ID:", latestOutputItem.call_id);
 
       if (latestOutputItem.name === "get_open_source_news") {
+        /**
+         * Challenge: Feed Tool Results Back to the Model
+         *
+         * The model has requested a tool and our app can run it.
+         * But the next model turn still needs the request and its result.
+         *
+         * Your task:
+         *
+         * 1. Push the original function_call into inputContext.
+         * 2. Push a function_call_output object into inputContext with:
+         *    - type: "function_call_output"
+         *    - call_id: the same call_id from latestOutputItem
+         *    - output: the result as a JSON string with JSON.stringify
+         *
+         * Check the hints folder for more guidance!
+         */
+
+        // Run the tool locally
         const openSourceNews = await getOpenSourceNews();
-        console.log(openSourceNews);
         console.log(
-          `get_open_source_news returned ${openSourceNews.length} items`,
+          "get_open_source_news executed: Got",
+          openSourceNews.length,
+          "items",
         );
+
+        // Push a function_call_output object into inputContext
+        inputContext.push({
+          type: "function_call_output",
+          call_id: latestOutputItem.call_id,
+          output: JSON.stringify(openSourceNews),
+        });
       }
+
       continue;
     }
+
+    console.log("Latest item type:", latestOutputItem?.type ?? "none");
   }
 
   console.log("\nMax turns reached before the model returned a final answer.");
