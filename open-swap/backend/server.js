@@ -2,7 +2,8 @@ import "dotenv/config";
 import express from "express";
 import OpenAI from "openai";
 import cors from "cors";
-import { readFile } from "node:fs/promises";
+import { searchSwaps } from "./store/index.js";
+
 
 const app = express();
 const PORT = Number(process.env.PORT || 3001);
@@ -16,7 +17,7 @@ app.use(
 app.use(express.json());
 
 // Initialize an OpenAI client for your provider using env vars
-const openai = new OpenAI({
+const client = new OpenAI({
   apiKey: process.env.AI_KEY,
   baseURL: process.env.AI_URL,
 });
@@ -29,123 +30,139 @@ app.get("/api/health", (_req, res) => {
   });
 });
 
-const systemPrompt = `You are OpenSwap, an AI assistant that helps users find open-source alternatives to popular software.
-
-Use the get_open_source_news tool before recommending software in case recent news would change your answer.`;
+const systemPrompt = `You are OpenSwap, an AI assistant that helps users find
+open-source alternatives to popular software. Use the search_swaps tool to
+search the local OpenSwap database when recommending alternatives. Base your
+recommendations on the database results rather than memory.`;
 
 const tools = [
   {
     type: "function",
-    name: "get_open_source_news",
+    name: "search_swaps",
     description:
-      "Retrieve recent news about open-source software. Use this before recommending software, in case recent news would change your answer.",
+      "Search OpenSwap's database for open-source alternatives to a specified product.",
+    parameters: {
+      type: "object",
+      properties: {
+        query: {
+          type: "string",
+          description:
+            "Only the name of the product being replaced. Do not include any requirements or other words.",
+        },
+      },
+      required: ["query"],
+      additionalProperties: false,
+    },
+    strict: true,
   },
 ];
 
 const userPrompt =
   "I want to replace Calendly for our team. We need SSO authentication and source code access.";
 
-async function getOpenSourceNews() {
-  const rawNews = await readFile(
-    new URL("./news.json", import.meta.url),
-    "utf8",
-  );
-  return JSON.parse(rawNews);
-}
-
-async function runAgent() {
-  // Keep a running input context array so later turns can see earlier output.
+async function runAgent(userPrompt) {
+  // Start the conversation with the user's request.
   const inputContext = [{ role: "user", content: userPrompt }];
-  const maxTurns = 5;
 
+  // Limit how many turns the agent can take to avoid infinite loops.
+  const maxTurns = 5;
   let turnCount = 0;
 
+  // Keep going until the agent finishes or runs out of turns.
   while (turnCount < maxTurns) {
+
     turnCount++;
     console.log(`Turn ${turnCount}`);
 
-      const turnResponse = await openai.responses.create({
-        model: process.env.AI_MODEL,
-        instructions: systemPrompt,
-        input: inputContext,
-        tools,
-      });
+    // Send the inputContext to the model and get its response.
+    const turnResponse = await client.responses.create({
+      model: process.env.AI_MODEL,
+      instructions: systemPrompt,
+      input: inputContext,
+      tools,
+    });
+    // Preserve the model's whole output turn for the next request.
+    inputContext.push(...turnResponse.output);
 
-      // Push the original function_call into inputContext.
-      inputContext.push(...turnResponse.output);
+    // Inspect the latest item to choose the next step.
+    const latestItem = turnResponse.output.at(-1);
 
-    const latestOutputItem = turnResponse.output.at(-1);
-
-    if (latestOutputItem?.type === "message") {
-      console.log(
-        "\n" +
-          (turnResponse.output_text ||
-            "Something went wrong. Please try again."),
-      );
-      return;
+    // Return the final answer when the model is done.
+    if (latestItem.type === "message") {
+      return turnResponse.output_text;
     }
 
-    if (latestOutputItem?.type === "function_call") {
-      console.log("Tool call requested:", latestOutputItem.name);
-      console.log("Call ID:", latestOutputItem.call_id);
+    // Handle a request to run a tool.
+    if (latestItem.type === "function_call") {
+      // Show which tool the model requested and what it sent.
+      console.log("Tool call requested:", latestItem.name);
+      console.log("Arguments:", latestItem.arguments);
+      
+      // Run the requested local tool.
+      if (latestItem.name === "search_swaps") {
+        // Parse the tool's JSON arguments.
+        const toolInput = JSON.parse(latestItem.arguments);
+        // Call the local searchSwaps function with the model's arguments.
+        const result = await searchSwaps(toolInput);
+        console.log("Database matches:", result.totalMatches);
+        console.log("Matched swaps:", result.swaps.map((swap) => swap.name));
 
-      if (latestOutputItem.name === "get_open_source_news") {
-        /**
-         * Challenge: Feed Tool Results Back to the Model
-         *
-         * The model has requested a tool and our app can run it.
-         * But the next model turn still needs the request and its result.
-         *
-         * Your task:
-         *
-         * 1. Push the original function_call into inputContext.
-         * 2. Push a function_call_output object into inputContext with:
-         *    - type: "function_call_output"
-         *    - call_id: the same call_id from latestOutputItem
-         *    - output: the result as a JSON string with JSON.stringify
-         *
-         * Check the hints folder for more guidance!
-         */
-
-        // Run the tool locally
-        const openSourceNews = await getOpenSourceNews();
-        console.log(
-          "get_open_source_news executed: Got",
-          openSourceNews.length,
-          "items",
-        );
-
-        // Push a function_call_output object into inputContext
+        // Send the tool result back to the model.
         inputContext.push({
           type: "function_call_output",
-          call_id: latestOutputItem.call_id,
-          output: JSON.stringify(openSourceNews),
+          call_id: latestItem.call_id,
+          output: JSON.stringify(result),
         });
       }
-
-      continue;
-    }
-
-    console.log("Latest item type:", latestOutputItem?.type ?? "none");
+    }      
   }
 
-  console.log("\nMax turns reached before the model returned a final answer.");
+  // Fall back if the agent uses every turn.
+  return "Something went wrong. Please try again.";
+  /**
+   * Super Challenge: Write the agent loop from scratch
+   *
+   * You've built every piece of this loop step by step over the last
+   * lessons: the input context, the turn budget, the API call, the
+   * message branch, parsing arguments, and the function_call_output.
+   * This time, write the whole loop yourself, start to finish. Take
+   * your time.
+   *
+   * Everything outside this function is ready: the system prompt, the
+   * search_swaps tool, and the searchSwaps import from the store. You
+   * only need to build the loop body.
+   *
+   * Your task:
+   *
+   * 1. Seed an input context array with the user prompt.
+   * 2. Loop with a turn budget so the agent can never spin forever.
+   * 3. Each turn, call the Responses API with systemPrompt, the input
+   *    context, and tools.
+   * 4. Read the latest output item.
+   *    - If it's a message, return the final text (with a fallback).
+   *    - If it's a function_call: preserve the model's full output turn
+   *      in the context, parse the arguments, and when the tool is
+   *      search_swaps, await searchSwaps(args) and push a
+   *      function_call_output with the matching call_id.
+   * 5. If the loop ever runs out of turns, return a fallback message.
+   *
+   * Check the hints folder for more guidance!
+   */
 }
 
 // Run the agent when the frontend calls this backend route.
 app.post("/api/agent", async (_req, res) => {
   try {
-    await runAgent();
-    res.json({ status: "ok" });
+    const agentResponse = await runAgent(userPrompt);
+    console.log(agentResponse);
+    res.json({ status: "ok", agentResponse });
   } catch (error) {
     console.error(error);
-    res.status(500).json({
-      status: "error",
-      message: "Something went wrong. Please try again.",
-    });
+    res.status(500).json({ error: "Something went wrong with the AI request." });
   }
 });
 
+// Start the Express server so the frontend can talk to it
 app.listen(PORT, () => {
-  console.log(`Backend running at http://localhost:${PORT}`);
+  console.log(`Backend server running at http://localhost:${PORT}`);
 });

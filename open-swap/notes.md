@@ -147,14 +147,16 @@ In input we have earlier we System Prompt > user message
 Now after accumulating tool calling System Prompt > tool description > user message.
 
 Turn 1: In turn 1, the input includes tool description as well and final output is not shown to the user because it is not a final answer yet. It is request for a function to be called.
+
 > Input: System Prompt > tool description > user message.
-Output: function_call 1 (not shown to user and passed to turn 2) 
+> Output: function_call 1 (not shown to user and passed to turn 2)
 
-Turn 2: In turn 2, input hast to include that function call 1 with associated output 1, this is result for tool calling just requested. 
+Turn 2: In turn 2, input hast to include that function call 1 with associated output 1, this is result for tool calling just requested.
+
 > Input: System Prompt > tool description > user message > function_call 1 > function_call_output 1
-Output: function_call 2 (not shown to user)
+> Output: function_call 2 (not shown to user)
 
-Turn 3: model keeps requesting tools, and our app keeps giving output until the model is finally ready to respond. 
+Turn 3: model keeps requesting tools, and our app keeps giving output until the model is finally ready to respond.
 Input: System Prompt > tool description > user message > function_call 1 > function_call_output 1 > function_call 2 > function_call_output 2
 Output: assistant message 1
 
@@ -165,6 +167,7 @@ We will keep building Agent Loop that can handle functions calls and produce a f
 #### The Agent Loop (Simplified)
 
 > Context ➡️ Send Request ➡️ Tool Call Required ➡️ No ➡️ Responsd to User
+
                                   ⬇️
                                   Yes
                                   ⬇️
@@ -254,21 +257,133 @@ app.post("/api/agent", async (_req, res) => {
     });
   }
 });
-```                                 
+```
 
-### Returning Tool Result 
+### Returning Tool Result
 
 The model has requested a tool and our app can run it. But the next model turn still needs the request and its result.
 
 1. Push the original function_call into inputContext.
 2. Push a function_call_output object into inputContext with:
-    - type: "function_call_output"
-    - call_id: the same call_id from latestOutputItem
-    - output: the result as a JSON string with JSON.stringify
+   - type: "function_call_output"
+   - call_id: the same call_id from latestOutputItem
+   - output: the result as a JSON string with JSON.stringify
 
 Shape of a function_call_output:
+
 - A tool result back to the Responses API is an object that connects the output back to the original request using these keys:
 
 > type: `function_call_output`
-call_id: Connects the result to the exact `function_call` the model made.
-output: The actual data returned by the local function must a `string` 
+> call_id: Connects the result to the exact `function_call` the model made.
+> output: The actual data returned by the local function must a `string`
+
+### Tool Parameters
+
+- Imagine if we have very long json and if we sent it every time to AI model, it will be wastage of tokens.
+- Instead we could search the news filtering based on some topic. This makes our Agent to Think -> Act -> Observe.
+- With Model `function_call` we will also pass `arguments` object attached and we will use those arguments as input parameters to send to your local function.
+  e.g `arguments {
+  topic: "..."
+}`
+
+Here is an example function definition for a get_weather function
+
+```js
+{
+  "type": "function",
+  "name": "get_weather",
+  "description": "Retrieves current weather for the given location.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "City and country e.g. Bogotá, Colombia"
+      },
+      "units": {
+        "type": "string",
+        "enum": ["celsius", "fahrenheit"],
+        "description": "Units the temperature will be returned in."
+      }
+    },
+    "required": ["location", "units"],
+    "additionalProperties": false
+  },
+  "strict": true
+}
+```
+
+We will also apply same pattern to our News Agent.
+
+Output: This is much better after adding parameters and it has better output because our model has a local tool that it can use.
+
+Turn 1
+Tool call requested: get_open_source_news
+Call ID: call_jvFRB4dLHjCM7Xi5TVo6WeGZ
+Arguments: {"topic":"Calendly"}
+get_open_source_news executed: Got 1 items
+Turn 2
+
+Here are open-source alternatives to **Calendly** that can meet your needs—especially **SSO authentication** and **source code access**—plus an important caveat from recent news.
+
+## Important caveat: Cal.com vs “open source”
+
+**Cal.com** is the closest “Calendly-style” product to an open-source Calendly replacement, but note the recent change: Cal.com reports moving its **commercial codebase closed source**, while it launched **Cal.diy** as a **MIT-licensed** (source-available) version.  
+So if you require _guaranteed full source-code access_ for the production product you’ll use, you’ll want to confirm whether the exact scheduling/workflow features you need (and SSO) are available in **Cal.diy** vs the now-partly closed Cal.com enterprise path.
+
+## Best-fit open-source options
+
+### 1) **Cal.com (verify edition for your SSO + source access requirements)**
+
+- **Why it fits:** Calendly-like booking pages, routing/customization, self-hosting story.
+- **SSO:** Cal.com commonly supports SSO patterns, but **you must confirm SAML/OIDC availability in the edition you’re deploying** (since code openness may differ now).
+- **Source code:** Depends on whether you’re using the MIT-licensed **Cal.diy** or the (now) commercial codebase path.
+- **Action:** If you’re considering this, ask the vendor/admin team (or check the repo/docs you’d deploy) to confirm:
+  - “Does the self-hosted build that includes our SSO feature set map to the MIT repo / accessible code?”
+  - “Which identity protocol(s) are supported for SSO (SAML vs OIDC), and are they configurable in our version?”
+
+### 2) **Your own “booking + routing” stack (most control; truly open-source)**
+
+If “must have SSO + must have source code access” is strict (legal/security), the most reliable approach is to build a lightweight scheduler using open components:
+
+- **Frontend booking UI:** open-source React alternatives (or your own)
+- **Scheduling logic:** open-source appointment scheduling libs/services
+- **Scheduling backend:** run your own service (e.g., Node/Python)
+- **SSO:** use standard IdPs via **SAML or OIDC** (Keycloak/Authelia/OR your IdP’s SSO integrations)
+- **Why this fits:** You retain full source control, can implement exactly what you need, and can integrate SSO using well-supported open standards.
+- **Tradeoff:** More engineering work than Cal.com-like tools.
+
+If you tell me your team size and whether you prefer “install & go” vs “build,” I can sketch an architecture.
+
+### 3) **Keycloak + a scheduling app you control (open-source integration path)**
+
+While **Keycloak** isn’t a Calendly clone, it’s excellent for meeting your **SSO** requirement, and it pairs well with any open-source scheduling UI/backend you choose.
+
+- **SSO:** strong, configurable SAML/OIDC
+- **Source access:** Keycloak is open source (with your own deployment you control)
+- **You still need:** a scheduling app (either Cal.diy if suitable, or a more generic open-source booking UI)
+
+## What I need from you to recommend the single best option
+
+1. **Do you require SAML or OIDC?** (or “either is fine”)
+2. Which IdP do you use? (Okta, Azure AD/Entra, Google Workspace, Auth0, etc.)
+3. How strict is “source code access”?
+   - “Open-source repo available for the deployed product”
+   - or “self-hostable even if some parts are not open”
+4. Do you need advanced Calendly features (routing rules, interviewer/pool scheduling, team availability, webhooks/workflows), or just basic booking + SSO?
+
+Reply with those, and I’ll narrow it down to the best candidate (and whether **Cal.diy/Cal.com** meets your exact SSO + source-access requirements).
+
+### Wiring the agent loop
+
+1.  Seed an input context array with the user prompt.
+2.  Loop with a turn budget so the agent can never spin forever.
+3.  Each turn, call the Responses API with systemPrompt, the input
+    context, and tools.
+4.  Read the latest output item.
+    - If it's a message, return the final text (with a fallback).
+    - If it's a function_call: preserve the model's full output turn
+      in the context, parse the arguments, and when the tool is
+      search_swaps, await searchSwaps(args) and push a
+      function_call_output with the matching call_id.
+5.  If the loop ever runs out of turns, return a fallback message.
